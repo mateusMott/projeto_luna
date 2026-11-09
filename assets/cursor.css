@@ -1,0 +1,14 @@
+/* The native white dot remains visible above all browser layers. */
+html.cursor-enabled,html.cursor-enabled *,html.cursor-enabled dialog::backdrop{cursor:url('cursor-white.svg') 16 16,auto}
+html.cursor-enabled :is(input,textarea,[contenteditable=true]),html.cursor-enabled [contenteditable=true] *{cursor:text}
+.luna-cursor-layer{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;max-width:none!important;max-height:none!important;margin:0!important;padding:0!important;border:0!important;background:transparent!important;overflow:visible!important;pointer-events:none!important;z-index:2147483647;color:#fff}
+.luna-cursor-layer::backdrop{background:transparent;pointer-events:none}
+.luna-cursor-ring{position:fixed;top:0;left:0;width:32px;height:32px;margin:-16px;border:1.5px solid #fff;border-radius:50%;box-shadow:0 0 0 1px #0007;pointer-events:none;opacity:0;will-change:transform;transition:opacity .15s,width .23s,height .23s,margin .23s,background .23s}
+.luna-cursor-layer.visible .luna-cursor-ring{opacity:1}
+.luna-cursor-layer.hover .luna-cursor-ring{width:52px;height:52px;margin:-26px;background:#ffffff0c}
+.luna-cursor-layer.down .luna-cursor-ring{width:24px;height:24px;margin:-12px;background:#ffffff18}
+.cursor-toggle{display:inline-flex;align-items:center;gap:8px}
+.cursor-toggle:before{content:'';width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px #ffffff14}
+.cursor-toggle[aria-pressed=false]:before{background:currentColor;box-shadow:none;opacity:.4}
+@media(pointer:coarse){.cursor-toggle,.luna-cursor-layer{display:none!important}html.cursor-enabled,html.cursor-enabled *,html.cursor-enabled dialog::backdrop{cursor:auto}}
+@media(prefers-reduced-motion:reduce){.luna-cursor-ring{transition:none}}

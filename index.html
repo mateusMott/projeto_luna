@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <title>Luna — um lugar para suas ideias</title>
+  <meta name="description" content="Um espaço tranquilo para escrever, organizar suas notas e deixar as ideias acontecerem. Entre no seu Luna.">
+  <meta name="theme-color" content="#191a17">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="preload" href="./assets/cormorant-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./assets/login.css">
+  <link rel="stylesheet" href="./assets/cursor.css">
+  <script src="./assets/local-auth.js"></script><script defer src="./assets/local-login.js"></script>
+  <script defer src="./assets/cursor.js"></script>
+</head>
+<body>
+<a class="skip" href="#entrar">Ir para o login</a>
+<div class="shell">
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Luna, página de entrada"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 26 21 12M10 22C5 11 20 3 25 6s-1 18-12 17M15 18h7"/></svg>luna<span aria-hidden="true">.</span></a>
+    <div class="top-note"><span aria-hidden="true"></span>Seu ritmo. Seu espaço.</div>
+  </header>
+  <main class="main">
+    <section class="intro reveal" aria-labelledby="intro-title">
+      <p class="eyebrow">Menos ruído, mais ideias</p>
+      <h1 id="intro-title">O que você pensa<br>merece <em>espaço.</em></h1>
+      <p class="lead">Uma ideia solta. Um novo começo. Algumas palavras só suas. O Luna guarda espaço para tudo isso.</p>
+      <div class="illustration" aria-hidden="true"><div class="orbit"></div><div class="orbit second"></div><div class="note-sketch"><svg viewBox="0 0 32 32"><path d="M7 26 21 12M10 22C5 11 20 3 25 6s-1 18-12 17M15 18h7"/></svg><i></i><i></i><i></i></div><span class="spark">✧</span><span class="note-caption">toda ideia começa<br>em uma linha.</span></div>
+      <div class="intro-bottom"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6ZM9 12l2 2 4-4"/></svg>Um espaço pessoal</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v12H4ZM8 21h8M12 17v4"/></svg>Suas notas, neste navegador</span></div>
+    </section>
+    <section class="login-card reveal" id="entrar" aria-labelledby="login-title">
+      <div class="card-index">Seu espaço está aqui</div>
+      <div class="card-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 15A8 8 0 0 1 9 5a8 8 0 1 0 10 10Z"/></svg></div>
+      <h2 id="login-title">Bom ter você aqui.</h2>
+      <p class="card-description">Entre, respire e encontre um lugar<br>para suas próximas palavras.</p>
+      <form id="local-login"><label for="profile-name">Nome do perfil</label><input id="profile-name" name="username" autocomplete="username" minlength="2" maxlength="60" required placeholder="Como você quer chamar seu espaço?"><label for="profile-password">Senha do perfil</label><input id="profile-password" name="password" type="password" autocomplete="current-password" maxlength="256" required><div id="repeat-row" hidden><label for="profile-repeat">Repita sua senha</label><input id="profile-repeat" type="password" autocomplete="new-password" maxlength="256"></div><button class="signin" type="submit"><span id="submit-label">Entrar no meu espaço</span><span aria-hidden="true">↗</span></button></form><button id="switch-mode" type="button">Criar um perfil neste navegador</button><p class="signin-note" id="signin-status" role="status">Perfil local · sem sincronização entre aparelhos.</p><p class="local-reminder">Sua senha protege as notas neste navegador e não pode ser recuperada. Faça backups para guardar suas ideias em outro lugar.</p>
+      <div class="card-divider"></div>
+      <div class="promise"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10h14v11H5ZM8 10V6a4 4 0 0 1 8 0v4M12 14v3"/></svg><div><strong>Seu mundo, com cuidado.</strong>As notas ficam neste navegador. Você decide<br>o que escrever, proteger e levar com você.</div></div>
+      <button class="privacy-link" id="privacy-trigger" type="button" aria-haspopup="dialog">Como cuidamos do seu espaço ↗</button>
+      <div class="card-foot"><span>ESCREVA. GUARDE. RECOMECE.</span><svg class="tiny-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 15A8 8 0 0 1 9 5a8 8 0 1 0 10 10Z"/></svg></div>
+    </section>
+  </main>
+  <footer class="footer"><div class="footer-copy"><span>Luna © 2026</span><span class="slash" aria-hidden="true">/</span><span class="edition">Feito para as suas ideias.</span></div><span class="footer-quote">Um pouco de calma. Uma página em branco.</span><button class="cursor-toggle" type="button" aria-pressed="true">Efeito do cursor</button></footer>
+</div>
+<dialog class="privacy-dialog" id="privacy-dialog" aria-labelledby="privacy-title"><button class="dialog-close" type="button" data-close aria-label="Fechar">×</button><p class="eyebrow">Seu espaço, explicado</p><h2 id="privacy-title">Suas palavras continuam suas.</h2><p><strong>Acesso autenticado.</strong> Seu perfil é criado neste navegador, sem uma conta externa. A senha criptografa suas notas e não é guardada em texto puro.</p><p><strong>Notas locais.</strong> Seus textos são salvos neste navegador, neste dispositivo. Não há sincronização entre aparelhos, nem recuperação de senha. A senha mestra do gerenciador continua sendo uma proteção separada.</p><p><strong>Um cuidado a mais.</strong> Você pode proteger notas com PIN ou senha. Para levar suas notas a outro dispositivo ou preservar uma cópia, use Backup e Importar dentro do Luna.</p><button type="button" class="dialog-action" data-close>Entendi</button></dialog>
+</body>
+</html>
